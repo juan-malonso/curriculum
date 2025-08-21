@@ -1,6 +1,6 @@
 import { CollapsableList, DataType } from '@/components';
 
-import { Title, TitleType } from '@/elements';
+import { Link, Title, TitleType } from '@/elements';
 import { Color, Element, getColor } from '@/utils';
 
 export default function Home() {
@@ -49,9 +49,20 @@ export default function Home() {
                 type: DataType.OBJECT,
                 object: {
                   Email: 'juan.martinez.alons@gmail.com',
-                  LinkedId:
-                    'https://www.linkedin.com/in/juan-martinez-41a4261a9',
-                  Github: 'https://github.com/juan-malonso',
+                  LinkedId: (
+                    <Link
+                      label={'Juan Martinez'}
+                      link={
+                        'https://www.linkedin.com/in/juan-martinez-41a4261a9'
+                      }
+                    ></Link>
+                  ),
+                  Github: (
+                    <Link
+                      label={'Juan Malonso'}
+                      link={'https://github.com/juan-malonso'}
+                    ></Link>
+                  ),
                 },
               },
             ],

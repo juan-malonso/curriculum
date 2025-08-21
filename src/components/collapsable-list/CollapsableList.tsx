@@ -24,7 +24,7 @@ type CollapsableListData =
     }
   | {
       type: DataType.OBJECT;
-      object: Record<string, string>;
+      object: Record<string, string | JSX.Element>;
     }
   | {
       type: DataType.TEXT;
@@ -85,7 +85,9 @@ function CollapsableListData({ item }: { item: CollapsableListData }) {
           {Object.entries(item.object).map(([key, value], idx) => (
             <div key={idx} className="flex flex-col">
               <span className="font-bold">{key}:</span>
-              <span className="pl-2">{findTerms(value)}</span>
+              <span className="pl-2">
+                {typeof value === 'string' ? findTerms(value) : value}
+              </span>
             </div>
           ))}
         </div>
