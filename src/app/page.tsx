@@ -120,7 +120,12 @@ export default function Home() {
                   {
                     date: '2025',
                     title: 'Cloudflare My Site Web',
-                    subtitle: 'https://github.com/juan-malonso/curriculum',
+                    subtitle: (
+                      <Link
+                        label={'Curriculum Page'}
+                        link={'https://github.com/juan-malonso/curriculum'}
+                      ></Link>
+                    ),
                     body: [
                       {
                         type: DataType.TEXT,

@@ -11,7 +11,7 @@ export enum DataType {
 
 type ListItem = {
   title: string;
-  subtitle: string;
+  subtitle: string | JSX.Element;
   date: string;
   body: CollapsableListData[];
 };
@@ -48,7 +48,9 @@ function CollapsableListData({ item }: { item: CollapsableListData }) {
             <div>{item.date}</div>
           </div>
           <div className="font-semibold text-gray-400">
-            {findTerms(item.subtitle ?? '')}
+            {typeof item.subtitle === 'string'
+              ? findTerms(item.subtitle)
+              : item.subtitle}
           </div>
         </div>
       );
