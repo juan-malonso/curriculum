@@ -41,5 +41,6 @@
     "postbuild": "opennextjs-cloudflare build -s",
     "preview": "npm run build && wrangler dev",
     "start": "wrangler start"
-  }
+  },
+  "packageManager": "yarn@4.5.0"
 }
