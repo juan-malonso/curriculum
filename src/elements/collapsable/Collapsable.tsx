@@ -7,7 +7,7 @@ import { Title, TitleType } from '../title/Title';
 const CollapsableHeaderClass =
   'cursor-pointer flex w-full items-center justify-between gap-2 border-b border-das border-gray-400';
 
-const CollapsableBodyClass = 'overflow-hidden p-5 flex flex-col gap-4';
+const CollapsableBodyClass = 'overflow-hidden p-2 flex flex-col gap-2';
 
 const HiddenIcon = '+';
 const OpenIcon = '-';

@@ -81,17 +81,13 @@ function CollapsableListData({ item }: { item: CollapsableListData }) {
       );
     case DataType.OBJECT:
       return (
-        <div>
-          <table className={CollListItemClass}>
-            <tbody>
-              {Object.entries(item.object).map(([key, value], idx) => (
-                <tr key={idx}>
-                  <td className="p-1 font-bold align-top">{key}:</td>
-                  <td className="pl-5">{findTerms(value)}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        <div className="flex flex-col gap-4">
+          {Object.entries(item.object).map(([key, value], idx) => (
+            <div key={idx} className="flex flex-col">
+              <span className="font-bold">{key}:</span>
+              <span className="pl-2">{findTerms(value)}</span>
+            </div>
+          ))}
         </div>
       );
     case DataType.TEXT:
