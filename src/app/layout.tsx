@@ -1,19 +1,20 @@
 import './globals.css';
 import { ReactNode } from 'react';
 
-import { Header } from '@/components/Header';
-import { Color, ColorDark, ColorLight, Element } from '@/utils/Color';
+import { Header } from '@/components';
+import { Color, getColor, Element } from '@/utils';
 
 export default function RootLayout({ children }: { children: ReactNode }) {
-  const theme = `transition-colors duration-300 ${
-    ColorDark[Color.THEME][Element.BACKGROUND]
-  } ${ColorLight[Color.THEME][Element.TEXT]}`;
+  const bgColor = getColor(Color.THEME, Element.BACKGROUND);
+  const txColor = getColor(Color.THEME, Element.TEXT);
+
+  const theme = `${bgColor} ${txColor}`;
 
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`font-mono min-h-screenz-0 ${theme}`}>
         <Header className={theme} />
-        <div className="w-full max-w-3xl mx-auto px-4">{children}</div>
+        <div className="max-w-4xl mx-auto px-20 py-64">{children}</div>
       </body>
     </html>
   );

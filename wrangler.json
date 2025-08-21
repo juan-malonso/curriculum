@@ -11,5 +11,8 @@
   "observability": {
     "enabled": true
   },
+  "routes": [
+    { "pattern": "curriculum.deploy.men/*", "zone_name": "deploy.men" }
+  ],
   "upload_source_maps": true
 }
